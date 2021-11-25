@@ -1,11 +1,33 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import Menu from "./Menu";
+import Home from "./Home";
+import Carrinho from "./Carrinho";
+import Produtos from "./Produtos";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return 
+  return (
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/produtos" component={Produtos} />
+          <Route path="/carrinho" component={Carrinho} />
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+      <div className="App">
+        <Menu />
+        <header className="App-header">
+          <Home />
+        </header>
+      </div>
+    </div>
+
+  );
 }
 
-export default App
+export default App;
