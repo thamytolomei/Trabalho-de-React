@@ -3,7 +3,7 @@ function Menu() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a style={{padding: "10px", listStyle:"none"}} className="navbar-brand" href="#">
-           Eletrônicos
+          SerranoTec Eletrônicos
           </a>
           <a style={{padding: "10px", listStyle:"none"}} className="navbar-brand" href="#">
             Home
