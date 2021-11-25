@@ -9,24 +9,22 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/home" component={Home} />
-          <Route path="/produtos" component={Produtos} />
-          <Route path="/carrinho" component={Carrinho} />
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </BrowserRouter>
       <div className="App">
         <Menu />
         <header className="App-header">
-          <Home />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/produtos" component={Produtos} />
+            <Route path="/carrinho" component={Carrinho} />
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </BrowserRouter>
         </header>
       </div>
     </div>
-
   );
 }
 
