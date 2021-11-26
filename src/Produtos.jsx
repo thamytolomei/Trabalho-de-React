@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 
 function Produtos(){
-    const [produtos, setProdutos] =  React.useState([]);
-    const [quantidade, setQuantidade] = React.useState();
+    const [item, setItem] =  React.useState([]);
+    const [quantidade, setQuantidade] = React.useState([]);
 
-    React.useEffect(consultar, []);
+    React.useEffect(verifica, []);
 
-    function consultar(){
-     const listar = (res) => setProdutos(res.data);
-        api.get("/produtos").then(listar);
+    function verifica(){
+     const listar = (res) => setItem(res.data);
+        api.get("/produto").then(listar);
     }
     
     const handleSubmit = (event) => {
@@ -21,8 +21,8 @@ function Produtos(){
 return (
     <div>
         <h1>Produtos</h1>
-        {produtos.map((p) => (
-          <li key={p.id}>{p.title} <Link to={`produtos/${p.id}`}> </Link> 
+        {item.map((i) => (
+          <li key={i.id}>{i.nome} <Link to={`produtos/${i.id}`}> </Link> 
             <div className="card" style="width: 18rem;">
                 <img className="card-img-top" src="..." alt="Card image cap" />
                 <div className="card-body">
