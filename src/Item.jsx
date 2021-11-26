@@ -11,7 +11,6 @@ export default(props) =>{
     return(
         <div className="item">
             <h3>{item.nome}</h3>
-            <img src="" alt="" />
             <p>{item.descricao}</p>
             <p>{item.valor}</p>
             <Link to={`/produtos/${item.id}`}><button onClick={handler}>Especificações</button></Link>

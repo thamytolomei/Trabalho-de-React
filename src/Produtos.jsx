@@ -1,7 +1,7 @@
 import React from "react";
 import api from "./api";
 import { Link } from "react-router-dom";
-
+import Item from "./Item";
 
 function Produtos(){
     const [item, setItem] =  React.useState([]);
@@ -11,6 +11,7 @@ function Produtos(){
 
     function verifica(){
      const listar = (res) => setItem(res.data);
+     
         api.get("/produto").then(listar);
     }
     
@@ -18,19 +19,24 @@ function Produtos(){
         event.preventDefault();
     }
 
-return (
+ return (
     <div>
         <h1>Produtos</h1>
+
+        <ul>
         {item.map((i) => (
-          <li key={i.id}>{i.nome} <Link to={`produtos/${i.id}`}> </Link> 
+            
+            <li key={i.id}><Link to={`produtos/${i.id}`}> Detalhes</Link> 
+
             <div className="card" style="width: 18rem;">
-                <img className="card-img-top" src="..." alt="Card image cap" />
-                <div className="card-body">
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <img className="card-img-top" src= {i.foto} alt="Card image cap" />
+                <div className="card-body">{i.nome} {i.valor} 
+
+                    <p className="card-text"> {i.descricao} </p>
                 </div>
             </div>
-        </li>))}
-        <form onSubmit={handleSubmit}>
+            
+          <form onSubmit={handleSubmit}>
             <label style={{margin:"10px"}} htmlFor="">Qntd</label>
             <input 
                 style={{width:"4rem", margin:"10px"}}
@@ -42,6 +48,10 @@ return (
                 placeholder="0" />
         </form>
         <button type="submit">Enviar</button>
+        
+        
+        </li>))}
+     </ul>
     </div>
    )
 }
