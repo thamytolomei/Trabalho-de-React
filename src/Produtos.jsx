@@ -12,7 +12,7 @@ function Produtos(){
     function consultar(){
      const listar = (res) => setProdutos(res.data);
         api.get("/produtos").then(listar);
-  }
+    }
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,19 +31,19 @@ return (
             </div>
         </li>))}
         <form onSubmit={handleSubmit}>
-            <label htmlFor="">Quantidade</label>
+            <label style={{margin:"10px"}} htmlFor="">Qntd</label>
             <input 
-                style={{margin:"10px"}}
+                style={{width:"4rem", margin:"10px"}}
                 type="number"
                 nome="quantidade"
                 id="quantidade"
                 value={quantidade}
                 onChange={(event) => setQuantidade(1)}
-                placeholder="Quantidade" />
+                placeholder="0" />
         </form>
         <button type="submit">Enviar</button>
     </div>
-)
+   )
 }
 
 export default Produtos;
