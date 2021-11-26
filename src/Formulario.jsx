@@ -17,12 +17,13 @@ function Formulario(){
     }
 
     return ( 
-    <div>
-        <h2>Receba ofertas em seu e-mail!</h2>
+    <div style={{textAlign:"center"}}>
+        <h2 style={{textAlign:"center"}}>Receba ofertas em seu e-mail!</h2>
         <form onSubmit={handleSubmit}>
         <div>
             <label htmlFor="">Nome</label>
             <input 
+            style={{margin:"10px"}}
             type="text"
             nome="nome"
             id="nome"
@@ -33,6 +34,7 @@ function Formulario(){
         <div>
             <label htmlFor="">E-mail</label>
             <input 
+            style={{margin:"10px"}}
             type="text"
             nome="e-mail"
             id="email"
@@ -43,6 +45,7 @@ function Formulario(){
         <div>
             <label htmlFor="">Telefone</label>
             <input 
+            style={{margin:"10px"}}
             type="text"
             nome="telefone"
             id="telefone"

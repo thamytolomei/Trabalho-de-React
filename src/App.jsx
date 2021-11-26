@@ -5,6 +5,7 @@ import Carrinho from "./Carrinho";
 import Produtos from "./Produtos";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+
 function App() {
 
   return (
@@ -15,11 +16,12 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/produtos" component={Produtos} />
+            <Route path="/produtos" component={Produtos} /> {/*exact*/}
             <Route path="/carrinho" component={Carrinho} />
             <Route path="/">
               <Home />
             </Route>
+            
           </Switch>
         </BrowserRouter>
         </header>
