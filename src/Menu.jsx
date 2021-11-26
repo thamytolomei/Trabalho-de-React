@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Menu() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">

@@ -5,7 +5,7 @@ import Produtos from "./Produtos";
 import Sobre from "./Carrinho";
 
 function PaginaInicial(props) {
- /* switch (props.Menu) {
+ switch (props.Menu) {
     case "Home":
       return <Home />;
       break;
@@ -16,7 +16,7 @@ function PaginaInicial(props) {
       return <Carrinho />;
     default:
       return <h4>Clique num dos botões</h4>;
-  }*/
+  }
 }
 
 export default PaginaInicial;

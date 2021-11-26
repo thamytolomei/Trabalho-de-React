@@ -1,26 +1,31 @@
 import React from "react";
-//import api from "./api";
-//import styled from "styled-components";
+import api from "./api";
 import { useParams } from "react-router-dom";
 
-function ProdutoDetalhe(){
+function ProdutoDetalhe(props){
     const { id } = useParams();
-    const [produtos, setProdutos] = React.useState([]);
+    const [produto, setProduto] = React.useState({});
+    const listar = (resposta) =>{
+        console.dir(resposta)
+        setProduto(resposta.data);
+    } 
 
     React.useEffect(consultar, []);
-
+    
     function consultar(){
-        const listar = (resposta) => setProdutos(resposta.data);
-        api.get("/produtos").then(listar);
+        api.get(`/produto/${id}`).then(listar);
     }
      return(
-        <>
-        <h1>Detalhe do Produto</h1>
-        <p>{id}</p>
-        <p>Produto: {produto.title}</p>
-        <img src={produto.imagem} />
+         <>
+         {produto &&
+        <div>
+            <h1>Detalhe do Produto</h1>
+            <p>{produto.id}</p>
+            <p>Produto: {produto.nome}</p>
+            <img src={produto.fotoLink} />
+        </div>}
         </>
-    );
+    )
 }
 
 export default ProdutoDetalhe;

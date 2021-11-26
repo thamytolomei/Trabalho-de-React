@@ -7,7 +7,7 @@ export default (props) => {
     const [quantidade, setQuantidade] = React.useState([]);
 
     function espec(){
-        <Link to={`/ProdutoDetalhe/${props.id}`}></Link>
+        <Link to={`ProdutoDetalhe/${props.id}`}> </Link>
     }
     
     const handleSubmit = (event) => {
@@ -22,7 +22,7 @@ return (
         <div className="card-body">{props.produto.nome} {props.produto.valor} 
             <p className="card-text"> {props.produto.descricao} </p>
         </div>
-        <button onClick={espec()}>Especificações</button>
+        <Link to={`ProdutoDetalhe/${props.produto.id}`}> <button>Especificações</button></Link>
     <label htmlFor="">Qntd</label>
     <form onSubmit={handleSubmit}>
         <input 
