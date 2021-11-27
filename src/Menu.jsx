@@ -6,13 +6,13 @@ function Menu() {
           SerranoTec Eletrônicos
           </a>
           <a style={{padding: "10px", listStyle:"none"}} className="navbar-brand" href="#">
-            Home
+            <button Link to = {"/home"}> Home</button>
           </a>
           <a style={{padding: "10px", listStyle:"none"}} className="navbar-brand" href="#">
-            Produtos
+          <button Link to = {"/produtos"}>Produtos</button>
           </a>
           <a style={{padding: "10px", listStyle:"none"}} className="navbar-brand" href="#">
-            Carrinho
+          <button Link to = {"/carrinho"}> Carrinho </button>
           </a>
         </div>
       </nav>
