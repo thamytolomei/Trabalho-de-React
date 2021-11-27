@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Botao } from "./GlobalStyle";
 
 function Formulario(){
     const [nome, setNome] = React.useState("");
@@ -17,13 +18,14 @@ function Formulario(){
     }
 
     return ( 
-    <div style={{textAlign:"center"}}>
+    <div style={{margin:"20px"}}>
         <h2 style={{textAlign:"center"}}>Receba ofertas em seu e-mail!</h2>
         <form onSubmit={handleSubmit}>
-        <div>
-            <label htmlFor="">Nome</label>
-            <input 
-            style={{margin:"10px"}}
+        <div style={{margin:"20px"}}>
+            <label style={{fontSize:"17px"}} htmlFor="">Nome</label>
+            <br />
+            <input
+            style={{width:"60%", height: "1.3rem", borderRadius:"8px", borderColor:"2px solid black", backgroundColor:"white"}} 
             type="text"
             nome="nome"
             id="nome"
@@ -31,10 +33,11 @@ function Formulario(){
             onChange={(event) => setNome("")}
             placeholder="Digite seu nome" />
         </div>
-        <div>
-            <label htmlFor="">E-mail</label>
+        <div style={{margin:"20px"}}>
+            <label style={{fontSize:"17px"}} htmlFor="">E-mail</label>
+            <br />
             <input 
-            style={{margin:"10px"}}
+             style={{width:"60%", height: "1.3rem", borderRadius:"8px", borderColor:"2px solid black", backgroundColor:"white"}} 
             type="text"
             nome="e-mail"
             id="email"
@@ -42,10 +45,11 @@ function Formulario(){
             onChange={(event) => setEmail("")}
             placeholder="Digite seu e-mail" />
         </div>
-        <div>
-            <label htmlFor="">Telefone</label>
+        <div style={{margin:"20px"}}>
+            <label style={{fontSize:"17px"}} htmlFor="">Telefone</label>
+            <br />
             <input 
-            style={{margin:"10px"}}
+             style={{width:"60%", height: "1.3rem", borderRadius:"8px", borderColor:"2px solid black", backgroundColor:"white"}} 
             type="text"
             nome="telefone"
             id="telefone"
@@ -54,7 +58,7 @@ function Formulario(){
             placeholder="Digite seu telefone" />
         </div>
         </form>
-        <button type="submit">Enviar</button>
+        <Botao>Enviar</Botao>
     </div>
     )
 }

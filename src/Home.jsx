@@ -1,12 +1,21 @@
 import React from "react";
 import Formulario from "./Formulario";
+import {EstiloBotao,
+  Nav,
+  Navbar,
+  NavbarGood,
+  Header,
+  Logo,
+  FormDiv} 
+from './GlobalStyle';
 
-function Home(props) {
-
+function Home() {
   return (
-    <div style={{backgroundColor: "purple"}}>
-      <h2>Bem-vindo a nossa loja</h2>
-      <Formulario />
+    <div>
+      <Header/>
+      <FormDiv>
+      <Formulario/>
+      </FormDiv>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import { Botao, Botaozinho, Card, CardContainer} from "./GlobalStyle"
 
 
 export default (props) => {
@@ -14,27 +15,34 @@ export default (props) => {
         event.preventDefault();
     }
     
-    
 return (
     <li>
-    <div className="card">
-        <img className="card-img-top" src= {props.produto.fotoLink} alt="Card image cap" />
-        <div className="card-body">{props.produto.nome} {props.produto.valor} 
-            <p className="card-text"> {props.produto.descricao} </p>
+        <CardContainer>
+        <Card>
+        <div>
+            <img src= {props.produto.fotoLink} style={{width:"100%", margin:"0 auto"}}/>
+            <div className="nome">{props.produto.nome} {props.produto.valor}</div>
+            <div className="bottom">
+                <p className="descricao"> {props.produto.descricao} </p>
+                <Link to={`ProdutoDetalhe/${props.produto.id}`}>
+                    <Botao>Especificações</Botao>
+                </Link>
+                <label htmlFor="">Quantidade:</label>
+                <br />
+                <form onSubmit={handleSubmit}>
+                    <input 
+                        type="number"
+                        name="quantidade"
+                        id="quantidade"
+                        value={quantidade}
+                        onChange={(event) => setQuantidade()}
+                            placeholder="0" />
+                        <Botaozinho>Enviar</Botaozinho>    
+                </form>
+            </div>
         </div>
-        <Link to={`ProdutoDetalhe/${props.produto.id}`}> <button>Especificações</button></Link>
-    <label htmlFor="">Qntd</label>
-    <form onSubmit={handleSubmit}>
-        <input 
-            type="number"
-            name="quantidade"
-            id="quantidade"
-            value={quantidade}
-            onChange={(event) => setQuantidade()}
-                placeholder="0" />
-            <button type= "submit">Enviar</button>    
-    </form>
-    </div>
+        </Card>
+        </CardContainer>
     </li>
 )
 }

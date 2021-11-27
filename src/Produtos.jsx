@@ -1,7 +1,6 @@
 import React from "react";
 import api from "./api";
-import { Link } from "react-router-dom";
-import Item from "./Item";
+import { CardContainer } from "./GlobalStyle";
 import ProdutoComponent from "./ProdutoComponent";
 
 function Produtos (){
@@ -20,12 +19,11 @@ function Produtos (){
 
     return (
         <div>
-            <h1>Produtos</h1>
-           <ul>
+            <ul style={{listStyle:"none"}}>
                 {item.map((i) => (
                     <ProdutoComponent key={i.id} produto= {i} />
-             ))}
-                </ul>
+                ))}
+            </ul>
         </div>
        )
 }
